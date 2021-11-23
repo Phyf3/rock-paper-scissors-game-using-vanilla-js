@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+  <title>Rock, Paper, Scissors</title>
+
+</head>
+
+
+<body>
+
+  <div class="page">
+
+    <div class="header">
+      <div class="logo">
+        <img src="../images/logo.svg" alt="logo">
+      </div>
+
+      <div class="score-board">
+        <span>Score</span>
+        <span id="score">0</span>
+      </div>
+    </div>
+
+    <div class="selected"   id = "selected">
+      <h2 class="hidden" id="your-pick"> You Picked </h2>
+
+      <h2 class="hidden" id="house-pick"> House Picked </h2>
+  </div>
+
+    <div class="options" id="options">
+
+      <button class="rock" id="rock">
+        <img src="../images/icon-rock.svg" alt="">
+      </button>
+   
+      <button class="paper" id ="paper">
+        <img src="../images/icon-paper.svg" alt="">
+      </button>
+
+       
+      <button class="scissors" id = "scissors">
+        <img src="../images/icon-scissors.svg" alt="">
+      </button>
+    </div>
+    
+
+   
+    
+    <div class="selection" id = "selection">
+
+
+      <div class="user-select hidden" id = "user-select">
+        <span>YOU PICKED</span>
+        <img src="../images/icon-rock.svg" alt="">
+      </div>
+
+          
+       <div class="computer-choice hidden" id = "computer-choice">
+         <span>THE HOUSE PICKED</span>
+         <img src="../images/icon-rock.svg" alt="">
+       </div>
+
+    </div>
+
+    <div class="result-board ">
+      <h1 id="result-status" class="hidden">YOU WIN</h1>
+      <div class="play-again hidden" id ="play-again"> Play Again</div>
+    </div>
+ 
+
+    <div >
+      <div class="rules" id="rules">
+        <span>Rules</span>
+      </div>
+
+      <div id="rulesImage" class="hidden">
+        <img src="../images/image-rules.svg"   class="rule" alt="">
+        <img src="../images/icon-close.svg" class="close-icon" id="close-rules" alt="">
+      </div>
+    </div>
+   
+  </div>
+
+ 
+  
+</body>
+</html>

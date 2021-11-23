@@ -1,0 +1,289 @@
+/** {
+    outline: 1px solid orange
+}*/
+:root {
+    --background : linear-gradient(270deg, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    --boxShadow : inset -2px -10px 2px 2px rgba(0,0,0,.45);
+    --inner: -2px -9px 3px 2px rgba(0,0,0,.32);
+}
+body {
+    background: var(--background);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.page {
+    display: grid;
+    place-items: center;
+}
+
+.header {
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    border:3px solid hsl(216, 13%, 53%);
+    border-radius: 1rem;
+    padding:1rem;
+    margin-top: 3rem;
+    width: 18rem;
+}
+
+.logo img {
+    height:4rem;
+    width:6rem;
+}
+
+.score-board {
+    background-color: white;
+    color:hsl(229, 64%, 46%);
+    border-radius:.3rem;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: grid;
+    height: 4.25rem;
+}
+
+.score-board span:nth-child(1) {
+    font-weight: 500;
+    padding-top: .5rem;;
+}
+.score-board span:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom:.5rem;
+}
+
+.options {
+    background: url(../images/bg-triangle.svg);
+    background-repeat: no-repeat;
+    margin-top: 10rem;;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap:3rem;
+}
+
+.rock,  .paper, .scissors {
+    border-radius: 50%;
+    padding:.6rem;
+    box-shadow: var(--boxShadow);
+    border: 0px solid;
+}
+/*
+.rock:hover, .paper:hover, .scissors:hover {
+    transform:scale(1.1)
+}*/
+
+
+.rock img, .paper img, .scissors img{
+    box-shadow: var(--inner);
+    background: white;
+    padding:1.6rem;
+    border-radius: 50%;
+    opacity: 1;
+    pointer-events:none;
+    cursor: pointer;
+}
+.rock{
+    background: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+    
+}
+.options button:nth-child(1) {
+    position: relative;
+    left:5.5rem;
+    order:3;
+}
+
+.rings {
+    box-shadow: 0 0 0 20px rgba(252, 251, 251, 0.089),
+    0 0 0 40px  rgba(253, 253, 253, 0.055),
+    0 0 0 60px rgba(250, 250, 250, 0.041);
+}
+
+.paper{
+    background: linear-gradient( hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+    
+}
+.options button:nth-child(2) {
+    position: relative;
+    bottom:2rem;
+    order:1;
+}
+.scissors {
+    background: linear-gradient( hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+    
+}
+.options button:nth-child(3) {
+    position: relative;
+    bottom:2rem;
+    left:.5rem;
+    order:2;
+}
+
+
+
+
+.rules {
+    margin-top:1rem;
+    cursor: pointer;
+    border:2px solid hsl(216, 13%, 53%);
+    background: transparent;
+    border-radius: .3rem;
+    padding: .5rem;
+}
+
+.rules span {
+    color:white;
+    font-size: 1.5rem;
+}
+
+.rule {
+    width:50vw;
+    padding: 5rem 5rem 5rem 5rem;
+    background-color: white;
+    display: block;
+    position: absolute;
+    bottom: 17rem;
+    right: 1.5rem;
+    z-index: 2;
+    border-radius: 2rem;
+
+}
+
+
+.close-icon { /* Come back to restyle this icon and the whole page */
+    height:1.5rem;
+    width:1.5rem;
+    position: absolute;
+    bottom:19rem;
+    right:12rem;
+    z-index:3;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    width:20rem;
+    margin-top: 5rem;
+}
+
+.user-select {
+    order:1;
+}
+.computer-choice {
+    order:2;
+}
+
+.selection span {
+    color: white;
+    position: absolute;
+    top:25rem;
+    text-align: center;
+    font-size: 1.3rem;;
+    font-weight: 700;
+    width: 17ch;
+   
+}
+.user-select>span {
+    left:-1rem;
+}
+.computer-choice span {
+    right:0rem;
+}
+
+.result-board {
+    display: grid;
+    justify-content: center;
+    margin-top:5rem;
+}
+
+.result-board h1 {
+    color:white;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.result-board div {
+    background-color: white;
+    color: var(--background);
+    font-size: 1.4rem;
+    text-align: center;
+    padding:.5rem;
+    border-radius: .5rem;
+    text-transform: uppercase
+}
+.result-board div:hover {
+    color:red
+}
+
+
+@media screen and (min-width : 768px) {
+    body {
+        overflow-y: hidden;
+    }
+    .rock, .paper, .scissors {
+        transform: scale(1.5);
+    } 
+    .options button {
+        transform: scale(1.2);
+    }
+    .options button:nth-child(2) {
+        right:3rem;
+    }
+    .options button:nth-child(3) {
+        left:3rem;
+    }
+    .selection {
+        width:60vw;
+        margin-top:12rem;
+    }
+
+    .result-board {
+        position: relative;
+        bottom:15rem;
+    }
+    .rules {
+        margin-left: 60rem;
+        padding: .5rem 2rem .5rem 2rem;
+        position: relative;
+        bottom:8.5rem;
+    }
+    .selection span {
+        font-size: 1rem;
+    }
+    .user-select>span {
+        left:-1rem;
+        top:-4rem;
+    }
+    .computer-choice span {
+        right:-1rem;
+        top:-4rem;
+    }
+    .rule {
+        top:12rem;;
+        width:20vw;
+        left:30rem;
+    }
+    .close-icon {
+        left:43.5rem;
+        top:34rem;
+    }
+
+    .result-board {
+        margin-top:8rem;
+    }
+    .result-board h1 {
+        font-size: 2.3rem;;
+    }
+    .result-board div {
+        padding: .5rem 1rem .5rem 1rem;
+        font-size: 1rem;
+    }
+
+}
