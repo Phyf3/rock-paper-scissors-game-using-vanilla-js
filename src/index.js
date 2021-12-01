@@ -27,6 +27,7 @@ const handleRules = document.getElementById('rules');
 const handleRuleImage = document.getElementById('rulesImage')
 const closeRules = document.getElementById('close-rules')
 
+const resultPanel = document.getElementById('result-board')
 
 const updateScore = (value) => {
     score += value
@@ -37,11 +38,6 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     userChoice = possibleChoice.getAttribute('id') //getting the value of the id
     options.classList.add('hidden');
     selectionPage.classList.remove('hidden')
-
-//    setTimeout(() => {
- //       ring.classList.remove('hidden')
-   // }, 2000)
-    
     setTimeout(()=> {
         resultBoard()
     }, 2000)
@@ -122,7 +118,9 @@ const draw = () => {
 const resultBoard = () => {
     playAgain.classList.remove('hidden')
     resultStatus.classList.remove('hidden')
+    resultPanel.classList.add('anim')
 }
+
 
 const replay = (e) => {
     e.classList.add('hidden')
